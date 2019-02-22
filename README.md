@@ -11,7 +11,7 @@ python3 app.py
 ```
 
 ##### Feature:
-1. Search result return same with keyword.
+1. The search result return same with the keyword.
 2. User can search multiple keywords.
 3. User can't input the keyword less than 3 word or more than 50.
 4. Keyword only allow alphanumeric, dash, dot and comma.
