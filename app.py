@@ -14,28 +14,25 @@ json_data = read_json()
 print(json_data)
 
 
-# search multiple words
 def search_multiple_words(search_words):
-    # search_words = [search_words]
 
-    # split input string to separate input string
+    # split input to separate string
     search_words = search_words.split(' ')
 
     ascending_list = []
 
     for line in json_data:
+        # search multiple words
         if any(word in line for word in search_words):
             ascending_list.append(line)
 
     # Search result ordering by total character ascending
-    ascending_list.sort()  # sorts normally by alphabetical order
     ascending_list.sort(key=len, reverse=True)  # sorts by descending length
 
     for i in ascending_list:
         print(i)
 
 
-# check if the input users is not less than 3 or more than 50
 while True:
     search_words = input('search words: ')
 
@@ -43,6 +40,7 @@ while True:
     if not re.match('[a-zA-Z0-9\-\.\,]', search_words):
         print('Only allow alpanumeric, dash, dot and comma')
 
+    # check if the input users is not less than 3 or more than 50
     if len(search_words) <= 3 or len(search_words) > 50:
         print('Please don"t input less than 3 word or more than 50 word')
     else:
